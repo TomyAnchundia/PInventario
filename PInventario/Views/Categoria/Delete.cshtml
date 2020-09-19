@@ -1,0 +1,39 @@
+﻿@model PInventario.Models.Categoria
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<br />
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">@Html.ActionLink("Inicio", "Index", "Profile")</li>
+        <li class="breadcrumb-item">@Html.ActionLink("Categoría", "Index", "Categoria")</li>
+        <li class="breadcrumb-item active" aria-current="page">Eliminar Categoría</li>
+    </ol>
+</nav>
+<h3>¿Seguro desea eliminar esta categoría?</h3>
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+           Nombre categoría
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre_categoria)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+            <a href="@(Url.Action("Index"))"> <img src="~/Content/imagenes/regresar.png" alt="Crear" /></a>
+        </div>
+    }
+</div>

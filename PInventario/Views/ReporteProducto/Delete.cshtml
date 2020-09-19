@@ -1,0 +1,54 @@
+﻿@model PInventario.Models.ReporteProducto
+
+@{
+    ViewBag.Title = "Delete";
+}
+<br />
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">@Html.ActionLink("Inicio", "Index", "Profile")</li>
+        <li class="breadcrumb-item">@Html.ActionLink("Reporte", "Index", "ReporteProducto")</li>
+        <li class="breadcrumb-item active" aria-current="page">Eliminar Reporte</li>
+    </ol>
+</nav>
+
+<h3>¿Seguro desea eliminar este reporte?</h3>
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Papelería
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Papeleria.Nombre_papeleria)
+        </dd>
+
+        <dt>
+            Fecha de emisión
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha_emision)
+        </dd>
+
+        <dt>
+            Descripcíon
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descripcion_reporte)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+            <a href="@(Url.Action("Index"))"> <img src="~/Content/imagenes/regresar.png" alt="Crear" /></a>
+        </div>
+    }
+</div>

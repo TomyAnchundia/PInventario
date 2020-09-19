@@ -1,0 +1,41 @@
+﻿@model PInventario.Models.Marca
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<br />
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">@Html.ActionLink("Inicio", "Index", "Profile")</li>
+        <li class="breadcrumb-item">@Html.ActionLink("Marca", "Index", "Marca")</li>
+        <li class="breadcrumb-item active" aria-current="page">Eliminar Marca</li>
+    </ol>
+</nav>
+
+
+<h3>¿Seguro desea eliminar esta marca?</h3>
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Nombre marca
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre_marca)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+            <a href="@(Url.Action("Index"))"> <img src="~/Content/imagenes/regresar.png" alt="Crear" /></a>
+        </div>
+    }
+</div>

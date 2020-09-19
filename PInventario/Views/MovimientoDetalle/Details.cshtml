@@ -1,0 +1,58 @@
+﻿@model PInventario.Models.MovimientoDetalle
+
+@{
+    ViewBag.Title = "Details";
+}
+<br />
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">@Html.ActionLink("Inicio", "Index", "Profile")</li>
+        <li class="breadcrumb-item">@Html.ActionLink("Movimiento", "Index", "MovimientoDetalle")</li>
+        <li class="breadcrumb-item active" aria-current="page">Detalles Movimiento</li>
+    </ol>
+</nav>
+
+
+<div>
+    <h4>Movimiento de Producto</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tipo Movimiento
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Movimiento.Tipo_movimimiento)
+        </dd>
+
+        <dt>
+            Producto
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Producto.Nombre_producto)
+        </dd>
+
+        <dt>
+            Fecha
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha_movimiento)
+        </dd>
+
+        <dt>
+            Cantidad
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cantidad)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <a href="@(Url.Action("Edit", new { id = Model.Id_movimiento_detalle }))"> <img src="~/Content/imagenes/editar.png" alt="Editar" /></a> |
+    <a href="@(Url.Action("Index"))"> <img src="~/Content/imagenes/regresar.png" alt="Regresar" /></a>
+
+</p>

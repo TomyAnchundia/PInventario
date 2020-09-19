@@ -1,0 +1,64 @@
+﻿@model PInventario.Models.MovimientoDetalle
+
+@{
+    ViewBag.Title = "Delete";
+}
+<br />
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">@Html.ActionLink("Inicio", "Index", "Profile")</li>
+        <li class="breadcrumb-item">@Html.ActionLink("Movimiento", "Index", "MovimientoDetalle")</li>
+        <li class="breadcrumb-item active" aria-current="page">Eliminar Movimiento</li>
+    </ol>
+</nav>
+
+
+<h3>¿Seguro desea eliminar este movimiento de producto?</h3>
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tipo de movimiento
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Movimiento.Tipo_movimimiento)
+        </dd>
+
+        <dt>
+            Producto
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Producto.Nombre_producto)
+        </dd>
+
+        <dt>
+            Fecha
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha_movimiento)
+        </dd>
+
+        <dt>
+            Cantidad
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cantidad)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+            <a href="@(Url.Action("Index"))"> <img src="~/Content/imagenes/regresar.png" alt="Crear" /></a>
+        </div>
+    }
+</div>

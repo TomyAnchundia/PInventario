@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Inventario</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/css/Generarl.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+
+    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color: #060d30"  >
+        <div class="container">
+            <div class="navbar-header " >
+
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"  aria-expanded="false">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @*<img id="logo" src="~/Content/imagenes/logoInventario.png" alt="Logo Inventario"  />*@
+                @Html.ActionLink("INVENTARIO", "Index", "Profile", new { area = "" }, new { @class = "navbar-brand" } )
+            </div>
+            <div class="navbar-collapse collapse">
+
+                <ul class="nav navbar-nav navbar-right" id="opciones">
+                    @*<li>@Html.ActionLink("Inicio", "Index", "Home")</li>*@
+                    @if (User.Identity.IsAuthenticated)
+                    {
+
+                        <li class="dropdown-toggle">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true" style="color:#ffffff">
+                                Registrar <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu" style="background-color: #ffffff; color: black">
+                                <li>@Html.ActionLink("Producto", "Index", "Producto")</li>
+                                <li>@Html.ActionLink("Marca", "Index", "Marca")</li>
+                                
+                                <li>@Html.ActionLink("Categoría", "Index", "Categoria")</li>
+                            </ul>
+
+                        </li>
+
+
+
+
+                        <li class="dropdown-toggle">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true" style="color:#ffffff">
+                                Gestión<span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu" style="background-color: #ffffff; color: black">
+                                <li>@Html.ActionLink("Movimiento", "Index", "MovimientoDetalle")</li>
+                                <li>@Html.ActionLink("Reporte", "Index", "ReporteProducto")</li>
+                            </ul>
+
+                        </li>
+
+
+
+                            //opciones usuario
+
+                        <li class="dropdown-toggle">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true" style="color:#ffffff">
+                                Usuario<span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu" role="menu" style="background-color: #ffffff; color: black">
+                                <li>@Html.ActionLink("Editar usuario", "Index", "Usuario")</li>
+                                
+                                <hr />
+                                <li>@Html.ActionLink("Cerrar Sesión", "Logout", "Home")</li>    
+                            </ul>
+
+                        </li>
+
+
+
+
+
+
+
+                        @*<li>@Html.ActionLink("Usuario", "Index", "Usuario")</li>
+
+
+
+
+                        <li>
+                           
+
+                        </li>*@
+
+
+                    }
+                </ul>
+
+
+                
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        
+        <footer id="pie-de-pagina">
+            <div class="container">
+                <p class="footer_copy">
+                    &copy; @DateTime.Now.Year -Sistema de inventario Papeleria Thiago”.
+
+                </p>
+
+            </div>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+
+</html>

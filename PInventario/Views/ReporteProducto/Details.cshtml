@@ -1,0 +1,50 @@
+﻿@model PInventario.Models.ReporteProducto
+
+@{
+    ViewBag.Title = "Details";
+}
+<br />
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">@Html.ActionLink("Inicio", "Index", "Profile")</li>
+        <li class="breadcrumb-item">@Html.ActionLink("Reporte", "Index", "ReporteProducto")</li>
+        <li class="breadcrumb-item active" aria-current="page">Detalles Reporte</li>
+    </ol>
+</nav>
+
+<div>
+    <h4>Reporte de Productos</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+           Papelería
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Papeleria.Nombre_papeleria)
+        </dd>
+
+        <dt>
+            Fecha de emisión
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha_emision)
+        </dd>
+
+        <dt>
+            Descripción
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descripcion_reporte)
+        </dd>
+
+    </dl>
+</div>
+<p>
+
+    <a href="@(Url.Action("Edit", new { id = Model.Id_reporte_producto }))"> <img src="~/Content/imagenes/editar.png" alt="Editar" /></a> |
+    <a href="@(Url.Action("Index"))"> <img src="~/Content/imagenes/regresar.png" alt="Regresar" /></a>
+
+</p>

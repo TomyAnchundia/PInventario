@@ -1,0 +1,73 @@
+﻿@model PInventario.Models.Usuario
+
+@{
+    ViewBag.Title = "Delete";
+}
+<br />
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">@Html.ActionLink("Inicio", "Index", "Profile")</li>
+        <li class="breadcrumb-item">@Html.ActionLink("Usuario", "Index", "Usuario")</li>
+        <li class="breadcrumb-item active" aria-current="page">Eliminar Usuario</li>
+    </ol>
+</nav>
+
+
+
+<h3>¿Seguro desea eliminar este usuario?</h3>
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Papelería
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Papeleria.Nombre_papeleria)
+        </dd>
+
+        <dt>
+            Nombre
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            Apellido
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Apellido)
+        </dd>
+
+        <dt>
+            Nombre de usuario
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre_usuario)
+        </dd>
+
+        <dt>
+            Contraseña
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Contrasena)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+            <a href="@(Url.Action("Index"))"> <img src="~/Content/imagenes/regresar.png" alt="Crear" /></a>
+        </div>
+    }
+</div>

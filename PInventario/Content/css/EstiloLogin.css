@@ -1,0 +1,57 @@
+﻿body {
+    background: url(/Content/imagenes/background.jpg) no-repeat center center fixed;
+    background-size: cover;
+
+}
+
+
+.main-section {
+    margin:0 auto;
+    margin-top: 5%;
+    padding:0;
+}
+
+
+.user-img{
+    margin-top:-50px;
+    margin-bottom: 35px;
+}
+
+    .user-img img {
+        width: 100px;
+        height: 100px;
+        box-shadow: 1px 0px 9px #000000;
+        border-radius: 50%;
+    }
+
+
+
+.modal-content{
+    background-color: #ffffff;
+    opacity: .92;
+    padding: 0 20px;
+    box-shadow: 1px 0px 9px #000000;
+}
+
+.form-group input{
+    height: 42px;
+    font-size: 18px;
+    border: 0;
+    padding-left: 20px;
+    border-radius: 5px;
+    background-color: #94b3c6;
+    
+
+}
+
+
+button{
+    width:60%;
+    margin: 5px 0 25px;
+}
+
+.form-group#invitado{
+    padding: 5px 0;
+    color:white;
+   
+}

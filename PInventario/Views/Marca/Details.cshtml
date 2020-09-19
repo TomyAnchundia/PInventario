@@ -1,0 +1,36 @@
+﻿@model PInventario.Models.Marca
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<br />
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">@Html.ActionLink("Inicio", "Index", "Profile")</li>
+        <li class="breadcrumb-item">@Html.ActionLink("Marca", "Index", "Marca")</li>
+        <li class="breadcrumb-item active" aria-current="page">Detalles Marca</li>
+    </ol>
+</nav>
+
+
+<div>
+    <h4>Marca</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Nombre marca
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre_marca)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <a href="@(Url.Action("Edit", new { id = Model.Id_marca }))"> <img src="~/Content/imagenes/editar.png" alt="Editar" /></a> |
+    <a href="@(Url.Action("Index"))"> <img src="~/Content/imagenes/regresar.png" alt="Regresar" /></a>
+
+   
+</p>

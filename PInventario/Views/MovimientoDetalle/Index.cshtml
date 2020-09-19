@@ -1,0 +1,58 @@
+﻿@model IEnumerable<PInventario.Models.MovimientoDetalle>
+
+@{
+    ViewBag.Title = "Index";
+}
+<br />
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">@Html.ActionLink("Inicio", "Index", "Profile")</li>
+        <li class="breadcrumb-item active" aria-current="page">Movimiento</li>
+    </ol>
+</nav>
+<h3>
+    Nuevo Movimiento <a href="@(Url.Action("Create"))"> <img src="~/Content/imagenes/crear.png" alt="Crear" /></a>
+</h3>
+<table class="table">
+    <tr>
+        <th>
+           Tipo de movimiento
+        </th>
+        <th>
+            Producto
+        </th>
+        <th>
+           Fecha
+        </th>
+        <th>
+            Cantidad
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Movimiento.Tipo_movimimiento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Producto.Nombre_producto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fecha_movimiento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cantidad)
+            </td>
+            <td>
+                <a href="@(Url.Action("Edit", new { id = item.Id_movimiento_detalle }))"> <img src="~/Content/imagenes/editar.png" alt="Editar" /></a> |
+                <a href="@(Url.Action("Details", new { id = item.Id_movimiento_detalle }))"> <img src="~/Content/imagenes/detalles.png" alt="Detalles" /></a> |
+                <a href="@(Url.Action("Delete", new { id = item.Id_movimiento_detalle }))"> <img src="~/Content/imagenes/Eliminar.png" alt="Eliminar" /></a>
+
+
+            </td>
+        </tr>
+    }
+
+</table>

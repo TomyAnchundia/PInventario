@@ -1,0 +1,42 @@
+﻿@model PInventario.Models.Papeleria
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Papeleria</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre_papeleria)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre_papeleria)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Contacto_papeleria)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Contacto_papeleria)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Direccion_papeleria)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Direccion_papeleria)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id_papeleria }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
